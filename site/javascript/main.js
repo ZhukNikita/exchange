@@ -51,24 +51,6 @@ uahresult.innerHTML = (res.toFixed(3) + ' ₴');
           multi();
         };
     }
-
-// switch (op) {
-// 	case 'dollar':
-// 	res = nu / usd;
-// 	currency.innerHTML = String("доллары");
-// 	//usdresult.innerHTML = (res.toFixed(3));
-// 	break;
-// 	case 'euro':
-// 	res = nu / eur;
-// 	currency.innerHTML = String("евро");
-// 	//eurresult.innerHTML = (res.toFixed(3));
-// 	break;
-// 	case 'rub':
-// 	res = nu / rub;
-// 	currency.innerHTML = String("рубли");
-// 	//rubresult.innerHTML = (res.toFixed(3));
-// 	break;
-// }
  
 let usd
 let eur
