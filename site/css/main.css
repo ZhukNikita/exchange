@@ -1,82 +1,80 @@
 .exchange {
-	text-align: center;
-	background-color : #bfbfbf;
-    font-family: Roboto;
-    height: 100%;
-    width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 10px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+  text-align: center;
+  background-color: #bfbfbf;
+  font-family: Roboto;
+  height: 100%;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 h1 {
-	padding: 0 auto;
-}
-h4 {
-
+  padding: 0 auto;
 }
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
-.numb1{
-	border-radius: 1px;
-	border: 0px;
+.numb1 {
+  border-radius: 1px;
+  border: 0px;
 }
 .butt {
-	border-radius: 2px;
-    border: none;
-    color: white;
-    width: 70px;
-    height: 25px;
-    padding: 0 auto;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
-	background-color: #202020;
+  border-radius: 2px;
+  border: none;
+  color: white;
+  width: 70px;
+  height: 25px;
+  padding: 0 auto;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  background-color: #202020;
 }
 .select {
-	border-radius: 1px;
-	border: 0px;
-	width: 70px;
-	height: 17.5px;
-	text-align: center;
-	appearance: ;
+  border-radius: 1px;
+  border: 0px;
+  width: 70px;
+  height: 17.5px;
+  text-align: center;
 }
 .usd-cur {
-	border: 0px;
-	padding: 0px;
-	height: 22px ;
-	width: 40px;
+  border: 0px;
+  padding: 0px;
+  height: 22px;
+  width: 40px;
 }
 .currency2 {
-text-decoration: none;
+  text-decoration: none;
 }
 div .currency {
-	display: flex;
-	justify-content: safe center;
-	align-content: center;
-	margin: 0;
-	padding: 10px;
+  display: flex;
+  justify-content: safe center;
+  align-content: center;
+  margin: 0;
+  padding: 10px;
 }
-div.currency-left, div.currency-right {
-	width: 100px;
-	text-align: center;
+div.currency-left,
+div.currency-right {
+  width: 100px;
+  text-align: center;
 }
 div .result {
-	display: flex;
-	justify-content: safe center;
-	align-content: center;
-	margin: 0;
-	padding: 10px;
+  display: flex;
+  justify-content: safe center;
+  align-content: center;
+  margin: 0;
+  padding: 10px;
 }
 
-div.result-l, div.result-r {
-	width: 250px;
-	text-align: center;
+div.result-l,
+div.result-r {
+  width: 250px;
+  text-align: center;
 }
 .val {
-	margin-top: 10px;
-	padding-bottom: 10px;
+  margin-top: 10px;
+  padding-bottom: 10px;
 }
