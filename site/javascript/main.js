@@ -1,66 +1,44 @@
 //€₽₴$
- var op;
 function multi() {
-let nu = (numb1.value);
-let uah = 1 ;
-let currency1 =document.getElementById('select') ;
-if (currency1.value === "UAH") {
-res = nu / usd;
-usdresult.innerHTML = (res.toFixed(3) + ' $');
-res = nu / eur;
-eurresult.innerHTML = (res.toFixed(3) + ' €');
-res = nu / rub;
-rubresult.innerHTML = (res.toFixed(3) + ' ₽');
-res = nu / uah ;
-uahresult.innerHTML = (res + ' ₴');
+  let amount = +window.amount.value;
+  let uah = 1;
+  let usd = +window.usdval.innerText;
+  let eur = +window.eurval.innerText;
+  let rub = +window.rubval.innerText;
+  let currency = document.getElementById('currency').value;
 
-    } 
+  switch (currency) {
+    case 'UAH':
+      window.uahresult.innerText = amount / uah + ' ₴';
+      window.usdresult.innerText = (amount / usd).toFixed(3) + ' $';
+      window.eurresult.innerText = (amount / eur).toFixed(3) + ' €';
+      window.rubresult.innerText = (amount / rub).toFixed(3) + ' ₽';
+      break;
+    case 'USD':
+      window.usdresult.innerText = amount / uah + ' $';
+      window.eurresult.innerText = ((amount * usd) / eur).toFixed(3) + ' €';
+      window.rubresult.innerText = ((amount * usd) / rub).toFixed(3) + ' ₽';
+      window.uahresult.innerText = (amount * usd).toFixed(3) + ' ₴';
+      break;
+    case 'EUR':
+      window.eurresult.innerText = amount / uah + ' €';
+      window.usdresult.innerText = ((amount * eur) / usd).toFixed(3) + ' $';
+      window.rubresult.innerText = ((amount * eur) / rub).toFixed(3) + ' ₽';
+      window.uahresult.innerText = (amount * eur).toFixed(3) + ' ₴';
+      break;
+    case 'RUB':
+      window.rubresult.innerText = amount / uah + ' ₽';
+      window.usdresult.innerText = ((amount * rub) / usd).toFixed(3) + ' $';
+      window.eurresult.innerText = ((amount * rub) / eur).toFixed(3) + ' €';
+      window.uahresult.innerText = ((amount * rub) / uah).toFixed(3) + ' ₴';
+      break;
+  }
+}
 
-    else if (currency1.value === "USD") {
-res = nu / uah;
-usdresult.innerHTML = (res + ' $');
-res = nu * usd / eur;
-eurresult.innerHTML = (res.toFixed(3) + ' €');
-res = nu * usd / rub;
-rubresult.innerHTML = (res.toFixed(3) + ' ₽');
-res = nu * usd ;
-uahresult.innerHTML = (res.toFixed(3) + ' ₴');
-
-    } else if (currency1.value === "EUR") {
-res = nu * eur / usd;
-usdresult.innerHTML = (res.toFixed(3) + ' $');
-res = nu / uah;
-eurresult.innerHTML = (res + ' €');
-res = nu * eur / rub;
-rubresult.innerHTML = (res.toFixed(3) + ' ₽');
-res = nu * eur ;
-uahresult.innerHTML = (res.toFixed(3) + ' ₴');
-    }
-        else {
-      res = nu * rub / usd;
-usdresult.innerHTML = (res.toFixed(3) + ' $');
-res = nu * rub / eur;
-eurresult.innerHTML = (res.toFixed(3) + ' €');
-res = nu / uah;
-rubresult.innerHTML = (res + ' ₽');
-res = nu * rub / uah ;
-uahresult.innerHTML = (res.toFixed(3) + ' ₴');
-
-        }
-        currency1.onchange = function () {
-          multi();
-        };
-    }
- 
-let usd
-let eur
-let rub
 fetch('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json')
-.then ((res)=> res.json())
-.then((data)=> {usd = data[26].rate , eur = data[32].rate , rub = data[18].rate})
-.then(() =>  eurval.innerHTML = (eur.toFixed(3)))
-.then(() =>  usdval.innerHTML = (usd.toFixed(3)))
-.then(() =>  rubval.innerHTML = (rub.toFixed(3)))
-
-
-
+  .then((res) => res.json())
+  .then((data) => {
+    window.usdval.innerText = data[26].rate.toFixed(3);
+    window.eurval.innerText = data[32].rate.toFixed(3);
+    window.rubval.innerText = data[18].rate.toFixed(3);
+  });

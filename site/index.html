@@ -1,102 +1,94 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Калькулятор валют</title>
-	<link rel= "stylesheet" href= "css/main.css">
-	<script src="javascript/main.js" type="text/javascript"></script>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100&family=Open+Sans:ital,wght@1,300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Калькулятор валют</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="javascript/main.js" type="text/javascript"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100&family=Open+Sans:ital,wght@1,300&family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="exchange">
+      <h1>Калькулятор Валют</h1>
+      <h2>Курсы валют по отношению к гривне</h2>
+      <p><a href="../site/index1.html">Курс валют на текующую дату</a></p>
+      <div class="currency">
+        <div class="currency-left">
+          <button class="usd-cur"><img src="../site/image/usa.jpg" width="40" height="22" /></button>
+        </div>
+        <div class="currency-right">Курс <span id="usdval"> </span></div>
+      </div>
 
- 
-</head>
-<body>
-<div class="exchange">
-	<h1>Калькулятор Валют</h1>
-	<h2>Курсы валют по отношению к гривне</h2>
-	<p> <a href="../site/index1.html">Курс валют на текующую дату</a> </p>
-		<div class="currency">
+      <div class="currency">
+        <div class="currency-left">
+          <button class="usd-cur"><img src="../site/image/euro.png" height="22" width="40" /></button>
+        </div>
+        <div class="currency-right">Курс <span id="eurval"> </span></div>
+      </div>
 
-		<div class = 'currency-left'>
-			<button class="usd-cur"><img src="../site/image/usa.jpg" width="40" height="22"></button>
-		</div>
-		<div class = 'currency-right'>Курс 	<span id='usdval'> </span>
-		</div>
+      <div class="currency">
+        <div class="currency-left">
+          <button class="usd-cur" onclick="op = 'rub' ">
+            <img src="../site/image/russia.png" height="22" width="40" />
+          </button>
+        </div>
+        <div class="currency-right">Курс <span id="rubval"> </span></div>
+      </div>
 
-		</div>	
+      <input type="text" id="amount" placeholder="Введите количество валюты" size="25px" class="amount" />
+      <select id="currency" onchange="multi()" class="select">
+        <option value="UAH">UAH</option>
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="RUB">RUB</option>
+      </select>
+      <div>
+        <p><button onclick="multi()" class="butt">Обмен</button></p>
+      </div>
 
-	<div class="currency">
-
-	<div class="currency-left">
-		<button  class="usd-cur"><img src="../site/image/euro.png" height="22" width="40"></button>
-	</div>	
-	<div class="currency-right">Курс <span id='eurval'> </span></div>
-
-	</div>
-
-
-
-<div class="currency">
-		<div class="currency-left">
-			<button class="usd-cur" onclick="op = 'rub' "><img src="../site/image/russia.png" height="22" width="40">
-			</button>
-		</div>
-		<div class="currency-right">Курс <span id='rubval'> </span></div>
-	</div>
-
-
-
-	<input type="text" id="numb1" placeholder="Введите количество валюты" size="25px" class="numb1">
-	<select id = "select" class = "select">
-		<option value="UAH">UAH</option>
-		<option value="USD">USD</option>
-		<option value="EUR">EUR</option>
-		<option value="RUB">RUB</option>
-
-
-
-	</select>
-<div>
-			<p><button onclick="multi()" class="butt">Обмен</button> </p>
-
-		</div>
-
-	<p>  Вы получите: 	</p>
-	<div class="result">
-		<div class="result-l">
-	<div class="currency">
-
-	<div class="currency-left"><button  class="usd-cur"><img src="../site/image/usa.jpg" height="22" width="40"></button></div>	
-	<div class="currency-right">
-		<span id="usdresult">  </span>
-	</div>
-
-	</div>
-	<div class="currency">
-
-	<div class="currency-left"><button  class="usd-cur"><img src="../site/image/euro.png" height="22" width="40"></button></div>	
-	<div class="currency-right">
-		<span id="eurresult"> </span>
-		</div>
-	</div>
-</div>
-<div class="result-r">
-	<div class="currency">
-	<div class="currency-left"><button  class="usd-cur"><img src="../site/image/russia.png" height="22" width="40"></button></div>	
-	<div class="currency-right">
-		<span id="rubresult"> </span>
-
-	 </div>
-
-	</div>
-	<div class="currency">
-	<div class="currency-left"><button  class="usd-cur"><img src="../site/image/ukraine.png" height="22" width="40"></button></div>	
-	<div class="currency-right">
-		<span id="uahresult"> </span>
-			 </div>
-		</div>
-	</div>
-</div>
-</div>
-</body>
+      <p>Вы получите:</p>
+      <div class="result">
+        <div class="result-l">
+          <div class="currency">
+            <div class="currency-left">
+              <button class="usd-cur"><img src="../site/image/usa.jpg" height="22" width="40" /></button>
+            </div>
+            <div class="currency-right">
+              <span id="usdresult"> </span>
+            </div>
+          </div>
+          <div class="currency">
+            <div class="currency-left">
+              <button class="usd-cur"><img src="../site/image/euro.png" height="22" width="40" /></button>
+            </div>
+            <div class="currency-right">
+              <span id="eurresult"> </span>
+            </div>
+          </div>
+        </div>
+        <div class="result-r">
+          <div class="currency">
+            <div class="currency-left">
+              <button class="usd-cur"><img src="../site/image/russia.png" height="22" width="40" /></button>
+            </div>
+            <div class="currency-right">
+              <span id="rubresult"> </span>
+            </div>
+          </div>
+          <div class="currency">
+            <div class="currency-left">
+              <button class="usd-cur"><img src="../site/image/ukraine.png" height="22" width="40" /></button>
+            </div>
+            <div class="currency-right">
+              <span id="uahresult"> </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
