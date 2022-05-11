@@ -57,7 +57,7 @@ let eur
 let rub
 fetch('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json')
 .then ((res)=> res.json())
-.then((data)=> {usd = data[26].rate , eur = data[32].rate , rub = data[18].rate})
+.then((data)=> {usd = data.find(usd => usd.cc === "USD").rate.toFixed(3) , eur = data.find(rub => rub.cc === "RUB").rate.toFixed(3), rub = data.find(eur => eur.cc === "EUR").rate.toFixed(3)})
 .then(() =>  eurval.innerHTML = (eur.toFixed(3)))
 .then(() =>  usdval.innerHTML = (usd.toFixed(3)))
 .then(() =>  rubval.innerHTML = (rub.toFixed(3)))
